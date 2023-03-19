@@ -23,7 +23,7 @@ fileList = ('information.docx','Hello.txt','myImage.png', \
 
 cur = conn.cursor()
 
-#iterates through the tuple, and enters 
+#iterates through the tuple for items ending in .txt, then inserts the value into col_fileName
 for i in fileList:
         if i.endswith('.txt'):
             with conn:

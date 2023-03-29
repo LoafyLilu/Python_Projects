@@ -11,10 +11,12 @@ class ParentWindow(Frame):
 
         # define our master frame configuration
         self.master = master
-        self.master.minsize(500,300) #(Height, Width)
-        self.master.maxsize(500,300)
+        self.master.minsize(500,400) #(Height, Width)
+        self.master.maxsize(500,400)
         self.master.title("Student Tracking")
         self.master.configure(bg="#6abab1")
+
+        student_tracking_gui.load_gui(self)
 
 
 

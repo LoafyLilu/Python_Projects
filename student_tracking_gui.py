@@ -44,9 +44,9 @@ def load_gui(self):
     self.lstList1.grid(row=1,column=2,rowspan=7,columnspan=3,padx=(0,0),pady=(0,0),sticky=N+E+S+W)
 
     self.btn_add = tk.Button(self.master,width=12,height=2,text='Add',command=lambda: student_tracking_func.addToList(self))
-    self.btn_add.grid(row=8,column=0,padx=(25,0),pady=(45,10),sticky=W)
+    self.btn_add.grid(row=10,column=1,padx=(25,0),pady=(45,10),sticky=W)
     self.btn_delete = tk.Button(self.master,width=12,height=2,text='Delete',command=lambda: student_tracking_func.onDelete(self))
-    self.btn_delete.grid(row=8,column=2,padx=(15,0),pady=(45,10),sticky=W)
+    self.btn_delete.grid(row=10,column=3,padx=(15,0),pady=(45,10),sticky=W)
 
     student_tracking_func.create_db(self)
     student_tracking_func.onRefresh(self)

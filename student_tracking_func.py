@@ -94,6 +94,7 @@ def addToList(self):
     print("var_fullname: {}".format(var_fullname))
     var_phone = self.txt_phone.get().strip()
     var_email = self.txt_email.get().strip()
+    var_course = self.txt_course.get().strip()
     if not "@" or not "." in var_email: # will use this soon
         print("Incorrect email format!!!")
     if (len(var_fname) > 0) and (len(var_lname) > 0) and (len(var_phone) > 0) and(len(var_email) > 0) and(len(var_course) > 0): # enforce the user to provide both names
@@ -106,7 +107,7 @@ def addToList(self):
             chkName = count
             if chkName == 0: # if this is 0 then there is no existance of the fullname and we can add new data
                 print("chkName: {}".format(chkName))
-                cursor.execute("""INSERT INTO tbl_student_tracking (col_fname,col_lname,col_fullname,col_phone,col_email) VALUES (?,?,?,?,?)""",(var_fname,var_lname,var_fullname,var_phone,var_email,var_course))
+                cursor.execute("""INSERT INTO tbl_student_tracking (col_fname,col_lname,col_fullname,col_phone,col_email,col_course) VALUES (?,?,?,?,?,?)""",(var_fname,var_lname,var_fullname,var_phone,var_email,var_course))
                 self.lstList1.insert(END, var_fullname) # update listbox with the new fullname
                 onClear(self) # call the function to clear all of the textboxes
             else:
@@ -161,21 +162,21 @@ def onClear(self):
     self.txt_email.delete(0,END)
     self.txt_course.delete(0,END)
 
-    def onRefresh(self):
-    # Populate the listbox, coinciding with the database
-        self.lstList1.delete(0,END)
-        conn = sqlite3.connect('db_student_tracking.db')
-        with conn:
-            cursor = conn.cursor()
-            cursor.execute("""SELECT COUNT(*) FROM tbl_student_tracking""")
-            count = cursor.fetchone()[0]
-            i = 0
-        while i < count:
-                cursor.execute("""SELECT col_fullname FROM tbl_student_tracking""")
-                varList = cursor.fetchall()[i]
-                for item in varList:
-                    self.lstList1.insert(0,str(item))
-                    i = i + 1
+def onRefresh(self):
+# Populate the listbox, coinciding with the database
+    self.lstList1.delete(0,END)
+    conn = sqlite3.connect('db_student_tracking.db')
+    with conn:
+        cursor = conn.cursor()
+        cursor.execute("""SELECT COUNT(*) FROM tbl_student_tracking""")
+        count = cursor.fetchone()[0]
+        i = 0
+    while i < count:
+            cursor.execute("""SELECT col_fullname FROM tbl_student_tracking""")
+            varList = cursor.fetchall()[i]
+            for item in varList:
+                self.lstList1.insert(0,str(item))
+                i = i + 1
     conn.close()
 
 

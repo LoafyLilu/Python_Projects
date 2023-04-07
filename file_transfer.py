@@ -86,7 +86,7 @@ class ParentWindow(Frame):
             #creates variable to store current itirations timestamp
             mod_time = datetime.fromtimestamp(os.path.getmtime(filepath))
             
-            if mod_time < threshold_time:
+            if mod_time > threshold_time:
                 #moves each file from the source to the destination that meets conditions
                 shutil.move(source + '/' + i, destination)
                 print(i + ' was successfully transfered.')

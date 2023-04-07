@@ -4,7 +4,8 @@ import tkinter.filedialog
 import os
 import shutil
 import datetime
-import time
+from datetime import datetime, timedelta
+
 
 
 class ParentWindow(Frame):
@@ -76,23 +77,22 @@ class ParentWindow(Frame):
         destination = self.destination_dir.get()
         #Gets a list of the files in the source directory
         source_files = os.listdir(source)
-        #Runs through each file in the source directory
-        #defines variables to store the data we need for our if else statement
-       
-
-        #if modification times are greater than or equal to 24 hrs, then...
-        mod_time = os.path.getmtime(source_files(i))
-        current_time = time.localtime()
-        threshold_time = (time.localtime())-(os.path.getmtime())
-        
         
         for i in source_files:
-            if mod_time > threshold_time:
-            #moves each file from the source to the destination
+            #creates a variable for the 24 hour threshold
+            threshold_time = datetime.now() - timedelta(days=1)
+            #creates a full filepath for i
+            filepath = os.path.join(source,i)
+            #creates variable to store current itirations timestamp
+            mod_time = datetime.fromtimestamp(os.path.getmtime(filepath))
+            
+            if mod_time < threshold_time:
+                #moves each file from the source to the destination that meets conditions
                 shutil.move(source + '/' + i, destination)
                 print(i + ' was successfully transfered.')
 
             else:
+                #tells the program to do nothing if conditions are not met
                 pass
 
     #creates function to exit program

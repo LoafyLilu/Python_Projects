@@ -1,0 +1,32 @@
+{% extends "SailorScouts_base.html" %}
+
+
+{% block column1 %}
+<div id="scout-table-form">
+<h2>{{ sailors.sailor_name }}</h2>
+
+<ul>
+    <li>English Name: {{ sailors.english_name }} </li>
+    <li>Japanese Name: {{ sailors.japanese_name }}</li>
+    <li>Sailor Power: {{ sailors.sailor_power }}</li>
+</ul>
+    <br>
+    <a href="../{{ sailor.pk }}scout-edit/"> Edit This Scout</a>
+    <br>
+    <a href="{% url 'sailorscouts_delete' sailors.id %}"> Delete this Scout</a>
+    <br>
+    <a href="{% url 'sailorscouts_list' %}"> Back to Scout List</a>
+
+</div>
+
+{% endblock %}
+
+{% block column2 %}
+
+    <h1>Welcome to Sailor Scout Central!</h1>
+        <p>
+            Here you can see info about a specific scout
+        </p>
+
+
+{% endblock %}

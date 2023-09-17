@@ -1,0 +1,22 @@
+{% extends "SailorScouts_base.html" %}
+{% block title %}Delete a Scout{% endblock %}
+
+{% block column2 %}
+            <p>
+                Here you can delete {{ sailors.sailor_name }} from the database
+            </p>
+{% endblock %}
+
+{% block column1 %}
+<div id="scout-table-form">
+<h1>Are you sure you want to delete {{ sailors.sailor_name }}</h1>
+    <form method="POST">
+			{% csrf_token %}
+			{{form}}
+       <button type="submit">Submit</button>
+            <br>
+        <button><a href="{% url 'sailorscouts_list' %}">Cancel</a></button>
+    </form>
+</div>
+
+{% endblock %}

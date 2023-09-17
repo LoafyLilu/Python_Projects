@@ -1,0 +1,20 @@
+{% extends "SailorScouts_base.html" %}
+
+{% block column2 %}
+<h1>Welcome to Sailor Scout Central!</h1>
+            <p>
+              Here you can see all the Sailor Scouts listed in the database
+            </p>
+{% endblock %}
+
+
+{% block column1 %}
+<div id="scout-table-form">
+    <ul>
+        {% for sailor in sailors %}
+            <li><a href="{% url 'sailorscouts_detail' sailor.id %}">{{ sailor.sailor_name }}</a></li>
+        {% endfor %}
+    </ul>
+</div>
+
+{% endblock %}

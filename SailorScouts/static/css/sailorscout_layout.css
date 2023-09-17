@@ -1,0 +1,453 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-image: url("../../static/images/pastel_bg.jpg");
+    text-align: center;
+    background-color: #c29bc1;
+    margin: 0%;
+    font-family: Avant Garde, Helvetica;
+}
+
+
+
+/* Heading 1 elements */
+h1 {
+    font-family: 'Lobster';
+    /* Sets the font family of all h1 headings */
+    text-align: center;
+    /* Centering all h1 elements */
+    margin-top: 3%;
+    /* Adds a small margin above h1 elements */
+    color: #FFF;
+}
+
+/* Paragraph elements */
+p {
+    font-family: Garamond, serif Bold;
+    text-align: justify;
+    /* Justify text within paragraph elements */
+    letter-spacing: .1vw;
+    /* This expands the text slightly */
+    font-size: 2.5vw;
+    padding-left: 1vw;
+    /* Adds padding to the left of the paragraph element */
+    padding-right: 1vw;
+    /* Adds padding to the right of the paragraph element */
+    color: rgb(183, 183, 183)
+}
+
+/* Center class - this applies to all elements with the class "center" */
+.center {
+    text-align: center;
+    /* This center aligns the text */
+}
+
+/* Anchor elements */
+a {
+    color: rgb(30, 103, 116);
+    /* This ensures all links are blue */
+}
+
+/* Quotation elements */
+q {
+    font-style: italic;
+    /* This makes the quote italicized */
+}
+
+/* Image elements */
+img {
+    border-radius: 8px;
+    /* Gives all images slightly rounded corners */
+    max-width: 100%;
+    /* Ensures all images stay within the width of their container */
+    max-height: 100%;
+    /* Sets the height of all images */
+    display: block;
+    /* By specifying block display we can ensure our images are able to be centered */
+    margin: auto auto auto auto; /* centers all images*/
+}
+
+/* The @media rule is used in media queries to apply different styles for different media/types of devices */
+/* On screens 576px and smaller the images will be 100px tall and centered vertically in the column */
+@media screen and (max-width: 576px) {
+    img {
+        height: 100px;
+        margin-top: 150px;
+    }
+}
+
+/* Styling for footer element */
+footer {
+    padding: 2%;
+    /* This gives the footer padding that is equal to 2% of the width of the element's area */
+    background-color: #663399;
+    opacity: 0.75;
+}
+
+/***** NAVBAR STYLING *****/
+.Navbar {
+    overflow: hidden;
+    /* This ensures that any content that overflows beyond the boundary of our nav bar is not displayed */
+    background-color: #663399;;
+    /* This colors the navbar black */
+    position: fixed;
+    /* This keeps the navbar at the top of the screen as we scroll */
+    top: 0;
+    /* This ensures no space is displayed above the navbar */
+    width: 100%;
+    /* This makes the navbar span the entire width of the page */
+    z-index: 1;
+    /* This ensures other elements don't display over the navbar */
+    -webkit-animation: moveNav 3s;
+    /* This applies the moveNav animation below for Safari 4.0 - 8.0 */
+    animation: moveNav 3s;
+    /* This applies the moveNav animation for all other browsers */
+}
+
+/* moveNav animation effect for moving the nav bar in from the left of the screen */
+@keyframes moveNav {
+    from {
+        left: -100vw;
+    }
+
+    /* The navbar is starting off screen to the left */
+    to {
+        left: 0vw;
+    }
+
+    /* This moves the navbar into place on the screen */
+}
+
+/* Navbar links */
+.Navbar a {
+    float: left;
+    /* This specifies that the text floats on the left on the navbar */
+    display: block;
+    /* This ensures that other text will be displayed on the same line or row, instead of a new line */
+    color: white;
+    /* This is the font color for text on our navbar */
+    padding: .75vw 1vw;
+    /* This adds padding around our text */
+    text-decoration: none;
+    /* This gets rid of the underlines under the text on our navbar */
+    font-family: Garamond, serif;
+    /* This specifies the font family for text on our navbar */
+    font-size: 16px;
+    /* This specifies the font size for text on our navbar */
+    text-align: center;
+    /* This centers the text within its container */
+    position: relative;
+    /* This sets the text relative to its normal positioning, allowing us to use the animation below */
+    -webkit-animation: moveNavText 5.75s;
+    /* Animation for Safari 4.0 - 8.0 */
+    animation: moveNavText 5.75s;
+    /* Applies the moveNavText animation for 5.75s */
+    border-radius: .75vw;
+}
+
+/* moveNavText animation effect for moving the navbar text from above the view to the navbar */
+@keyframes moveNavText {
+    from {
+        top: -100vw;
+    }
+
+    /* This sets the navbar text 100% above the viewport */
+    to {
+        top: 0vw;
+    }
+
+    /* This lowers the navbar text onto the navbar */
+}
+
+/* Screens 576px and smaller will display navbar links equally distributed */
+@media screen and (max-width: 576px) {
+    .Navbar a {
+        width: 25%;
+        /* This makes each link take up 1/4 of the navbar */
+        font-size: 12px;
+    }
+}
+
+/* Navbar hover effects */
+.Navbar a:hover {
+    background-image: linear-gradient(to left, #ffb3ff, #b393d3);
+    color: rgb(86, 74, 97);
+    /* This defines the font color that will display when navbar a elements are hovered over */
+    font-weight: bold;
+    /* This makes the text on the navbar bold when hovered over */
+    cursor: pointer;
+    transition: 0.5s ease-in;   /* creates a smooth transition for hover trigger */
+}
+
+/* Navbar home button */
+.Navbar a.active {
+    /* This targets the a element on the navbar with the "active" class */
+    background-color: darkgray;
+}
+
+/***** END OF NAVBAR STYLING *****/
+
+/***** TABLE STYLING -  this section covers the styling of the columns and rows within the table *****/
+* { box-sizing: border-box;}
+
+.Column_1 {
+    float: left;
+    width: 50%;
+    /* This ensures the column takes up half of the page width */
+    padding: 1.6%;
+    /* This ensures there is space between the top of the column and our headings */
+    height: 450px;
+    /* This sets the height of the column to 400px -  this may need to be adjusted depending on the text you enter */
+    background-color: #e84fb8;
+    /* Sets the background color of the columns with class Column_1 */
+    /* adjusts the transparency of the column bg */
+    opacity: 0.5;
+}
+
+/* Paragraph elements */
+.Column_1 p {
+    font-family: Garamond, serif Bold;
+    text-align: justify;
+    /* Justify text within paragraph elements */
+    letter-spacing: .1vw;
+    /* This expands the text slightly */
+    font-size: 2.5vw;
+    padding-left: 1vw;
+    /* Adds padding to the left of the paragraph element */
+    padding-right: 1vw;
+    /* Adds padding to the right of the paragraph element */
+    color: #451273;
+}
+
+.Column_2 {
+    float: left;
+    width: 50%;
+    padding: 1.6%;
+    height: 450px;
+    background-color: #e84fb8;
+    /* adjusts the transparency of the column bg */
+    opacity: 0.5;
+}
+
+.Column_2 p {
+    font-size:16px;
+    color: #451273;
+    opacity: 1;
+}
+
+
+/* This inserts something after the content of selected elements (in this case the elements with class "Row") */
+.Row:after {
+    content: "";
+    /* By leaving this blank, we are allowing the footer (covered lower down) to be displayed - removing it makes the footer overwrite a column */
+    display: table;
+    /* The display property specifies the type of display behavior; the table value tells the browser to treat the element as a table */
+    clear: both;
+    /* This clears any other elements from floating on the left or the right of an element */
+}
+
+/***** END OF TABLE STYLING *****/
+
+#scout-table-form {
+    width: 60%;
+    padding: 10px;
+    border-radius: 8px;
+    margin: 50px auto;
+    background-image: linear-gradient(to right, rgba(229, 115, 174, 0.5), rgba(115, 170, 230, 0.5));
+    box-shadow: -1px -1px 1px 0 rgba(0, 0, 0, 1);
+    opacity: 1;
+}
+
+#scout-table-form h2 {
+    width: 70%;
+    text-align: center;
+    margin: 0 auto;
+    color: #f2d61e;
+    font-weight: 500;
+    font-size: 1.3em;
+    letter-spacing: 0pt;
+    word-spacing: 0pt;
+}
+
+#scout-table-form h2 span {
+    width: 70%;
+    text-align: center;
+    margin: 0 auto;
+    color:#f2d61e;
+    font-weight: 900;
+    font-size: 1.5em;
+    font-variant: small-caps;
+    letter-spacing: .4pt;
+    word-spacing: .3pt;
+}
+
+#scout-table-form p{
+    color: #f2d61e;
+    width: 50%;
+    margin: 0 auto;
+}
+
+#scout-table form{
+    font-size: 15px;
+    outline: none;
+    font-weight: 600;
+    color: #25273f;
+    padding: 12px 12px;
+    width: 70%;
+    border: 1px solid #808080;
+    margin: 2% auto;
+    border-radius: 7px;
+    color: #f2d61e;
+    box-shadow: 2px 3px 3px 0px rgba(0, 0, 0, 0.3);
+    font-family: 'Raleway', sans-serif;
+}
+
+#scout-table input[type="text"] {
+    font-size: 15px;
+    outline: none;
+    font-weight: 600;
+    color: #8D8E8F;
+    padding: 2% 1% 2% 7%;
+    width: 80%;
+    border-top: 1px solid #090B0D;
+    border-right: 2px solid #424549;
+    border-bottom: 2px solid #424549;
+    border-left: 1px solid #090B0D;
+    margin: 10px 1em;
+    border-radius: 7px;
+    background: #3e2f44;
+    box-shadow: inset 0px 3px 0px 0px rgba(5, 5, 5, 0.15);
+    font-family: 'Raleway', sans-serif;
+}
+
+#scout-table input[type="text"]:hover {
+    box-shadow: 0 0 18px rgba(52, 54, 131, 0.8);
+}
+
+#scout-table-form submit input[type="submit"] {
+    color: rgb( 255, 255, 255);
+    cursor: pointer;
+    border: none;
+    font-weight: 900;
+    outline: none;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    margin: 0px 3%;
+    padding: 7px 0px;
+    width: 25%;
+    font-size: 18px;
+    transition: border-color 0.3s color 1.3s background-color 0.3s;
+    border-radius: 7px;
+    background-color:#4c0767;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+#scout-table-form submit input[type="submit"]:hover {
+    color: #000;
+    background-color: #7bb8f4;
+    box-shadow: inset 1px 2px 15px 0 rgba( 0, 0, 0, 0.5);
+}
+
+#scout-table-list {
+    width: 75%;
+    padding: 10px;
+    border-radius: 8px;
+    margin: top 50px;
+    background-image: linear-gradient(to right, rgba(229, 115, 174, 0.5), rgba(115, 170, 230, 0.5));
+    box-shadow: -1px -1px 1px 0 rgba(0, 0, 0, 1);
+}
+
+/*** Media Query Section -  rules for p font size for different screen sizes **/
+@media screen and (max-width: 528px) {
+    p {
+        font-size: 3.75vw;
+    }
+}
+
+@media screen and (min-width: 528px) and (max-width: 660px) {
+    p {
+        font-size: 3.5vw;
+    }
+}
+
+@media screen and (min-width: 661px) and (max-width: 799px) {
+    p {
+        font-size: 2.75vw;
+    }
+}
+
+@media screen and (min-width: 800px) and (max-width: 924px) {
+    p {
+        font-size: 2.5vw;
+    }
+}
+
+@media screen and (min-width: 925px) and (max-width: 1050px) {
+    p {
+        font-size: 2.25vw;
+    }
+}
+
+@media screen and (min-width: 1051px) and (max-width: 1310px) {
+    p {
+        font-size: 2vw;
+    }
+}
+
+@media screen and (min-width: 1311px) and (max-width: 1535px) {
+    p {
+        font-size: 1.75vw;
+    }
+}
+
+@media screen and (min-width: 1536px) and (max-width: 2269px) {
+    p {
+        font-size: 1.5vw;
+    }
+}
+
+@media screen and (min-width: 2270px) {
+    p {
+        font-size: 1.35vw;
+    }
+}
+
+/*media rule for navbar links for different screen sizes ;
+/*screens 1080px and smaller will display links evenly distrubuted */
+@media screen and (max-width: 1080px) {
+    .Navbar a{
+        width: 20%;     /* sets each link sie to 1/5 of the navbar */
+        font-size:  2.5vw;
+    }
+}
+
+/* media rules to enlarge the font of the text for smaller screens */
+@media screen and (max-width: 1080px) {
+    .quote {
+        font-size: 3.5vw;
+    }
+    .white-text {
+        font-size: 4.5vw;
+    }
+}
+
+/* media rules to increase the size of the columns for larger screens */
+@media screen and (min-width: 1725px) {
+    .Column_1 {
+        height: 550px;
+    }
+    .Column_2 {
+        height: 550px;
+    }
+}
+
+/* media rule to remove margin-top from h1 elements for xtra large screens */
+@media screen and (min-width: 2000px) {
+    hi{
+        margin-top: 0;
+    }
+}
+
+/**** End of Media Query section ***/

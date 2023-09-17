@@ -1,0 +1,21 @@
+{% extends "SailorScouts_base.html" %}
+{% block title %}Create a Sailor Scout{% endblock %}
+
+{% block column2 %}
+            <p>
+                Here you can add your own custom Sailor Scout to a database!<br>
+                Please complete all fields to properly add your Sailor!
+            </p>
+{% endblock %}
+
+{% block column1 %}
+<h1>Create a Sailor Scout!</h1>
+<div id="scout-table-form">
+    <form method="POST">
+			{% csrf_token %}
+			{{form}}
+       <input type="submit" value="Submit">
+    </form>
+</div>
+
+{% endblock %}

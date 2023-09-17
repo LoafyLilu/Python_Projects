@@ -1,0 +1,40 @@
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/sailorscout_layout.css' %}">
+    <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <title>{% block title%}Sailor Scout Central{% endblock %}</title>
+</head>
+<body>
+
+ <!--Navbar-->
+    <div class="Navbar">
+        <a href="{% url 'sailorscouts_home' %}">Home</a>
+        <a href="{% url 'sailorscouts_list' %}">Scouts</a>
+        <a href="{% url 'sailorscouts_add' %}">Add a Scout</a>
+    </div>
+
+<!--Intro Section-->
+    <div class="Row">  <!-- id="Intro"> -->
+        <!--Left column-->
+        <div class="Column_2">
+            {% block column2 %}
+            {% endblock %}
+        </div>
+        <!--Right column-->
+        <div class="Column_1">
+            {% block column1 %}
+            {% endblock %}
+        </div>
+    </div>
+</body>
+
+<!--Footer section-->
+    <footer>
+        <p>
+        <p class="center">Created by <a href="https://github.com/LoafyLilu" target="_blank">Charissa Day</a> 2023</p>
+        <br>
+    </footer>
+</html>

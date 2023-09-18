@@ -5,9 +5,15 @@ This repository will be for projects and assignments related to python
 
 Projects:
 
+	* Sailor Scouts App
 	* Phonebook
 	* File Transfer Gui
 	* Student Tracking Gui
+
+Sailor Scouts App
+
+	This small app was created using Python and the Django framework. This was created during the Python focused Live Project
+ 	at The Tech Academy 
 
 Phonebook
 
